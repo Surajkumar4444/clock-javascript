@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<style>
+    #clock{
+        background-color: black;
+        color: white;
+        height: 200px;
+        width: 200px;
+        padding: 10px;        
+        border-radius: 10%;
+        font-size: 20px;
+
+    }
+</style>
+<body>
+    <div id="clock">
+        12:0:0:
+    </div>
+</body>
+<script>
+    setInterval(showTime,1000)
+    function showTime(){
+        let date = new Date();
+        let hours = date.getHours();
+        let min = date.getMinutes();
+        let sec = date.getSeconds();
+        let am_pm;
+        if(am_pm>12){
+            am_pm='PM';
+        }else{
+            am_pm='AM';
+        }
+        let currentTime = hours+':'+min+':'+sec+':'+am_pm ;
+        document.getElementById('clock').innerHTML = currentTime;
+    }
+    showTime();
+</script>
+</html>
